@@ -30,22 +30,41 @@
 
 # 1 <= n <= 109
 
-def binaryGap(n : int) -> int :
-	last = -1
-	max_gap = 0
-	i = 0
-	while n > 0:
-		if n & 1:
-			if last != -1:
-				max_gap = max(max_gap, i - last)
-			last = i
-		n >>= 1
-		i += 1
-		
+# first alternative converting first to string
+
+# def binaryGap(n: int) -> int:
+#     binary = bin(n)[2:]  # remove '0b'
     
-		
-	return max_gap
+#     max_distance = 0
+#     last_position = -1
     
-num = 8
+#     for i in range(len(binary)):
+#         if binary[i] == '1':
+#             if last_position != -1:
+#                 max_distance = max(max_distance, i - last_position)
+#             last_position = i
+    
+#     return max_distance
+
+#second alternative bitwise operation
+def binaryGap(n):
+    max_distance = 0
+    last_position = -1
+    position = 0
+
+    while n > 0:
+        if n & 1:
+            if last_position != -1:
+                distance = position - last_position
+                if distance > max_distance:
+                    max_distance = distance
+            last_position = position
+        
+        n >>= 1
+        position += 1
+
+    return max_distance
+    
+num = 10
 
 print(binaryGap(num))
