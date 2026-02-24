@@ -1,3 +1,4 @@
+package february2026;
 public class stack1 {
     public static void main(String[] args) {
         String input = " madaraka";

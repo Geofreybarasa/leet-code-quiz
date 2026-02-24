@@ -1,3 +1,4 @@
+package february2026;
 public class sumnaturalNumbers {
 
     public static void main(String[] args){
