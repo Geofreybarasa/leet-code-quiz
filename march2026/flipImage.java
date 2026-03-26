@@ -18,7 +18,7 @@ public class flipImage {
                  1,0,1
                  0,1,1
          */
-        int[] 
+        int[] nums = {1,2,3};
 
 
     }
